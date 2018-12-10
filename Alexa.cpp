@@ -220,7 +220,16 @@ void AlexaSetup::alexaLooping(){
 #ifdef DEVICE_01
 void device_01(uint8_t brightness){
 
-  Serial.println("Device 01 has done something");
+    //EXAMPLE
+    if (brightness) {
+      Serial.print("ON, brightness ");
+      Serial.println(brightness);
+      //the device is ON and/or with a certain brightness
+    }
+    else  {
+      Serial.println("OFF");
+      //the device is OFF
+    }
   
   }
 #endif
