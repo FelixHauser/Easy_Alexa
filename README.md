@@ -27,6 +27,12 @@ Assuming you have the [Arduino IDE](https://www.arduino.cc/en/Main/Software) and
 
 
 
+# To have in mind when installing
+
+Obviously to use this Sketch template you need to have the ESP8266 board definitions on your Arduino IDE. It has been already reported that in order to be able to use the ESP8266 module family in combination with Alexa's ecosystem, **the board definition on the Arduino IDE has to be 2.3**. Any further version will result on the sketch not working properly.
+
+
+
 # Acknowledgements
 
 Many thanks to @Aircookie for his [ESPalexa Library](https://github.com/Aircoookie/Espalexa). It made things really easy on my home automation projects. Go check his other stuff!
