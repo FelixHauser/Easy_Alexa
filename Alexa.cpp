@@ -22,72 +22,20 @@ bool isOn=false;
  * 
  **************************************************/
 
-#ifdef DEVICE_01
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_02
-void device_02(uint8_t brightness);
-#endif
-#ifdef DEVICE_03
-void device_03(uint8_t brightness);
-#endif
-#ifdef DEVICE_04
-void device_04(uint8_t brightness);
-#endif
-#ifdef DEVICE_05
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_05
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_06
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_06
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_07
-void device_07(uint8_t brightness);
-#endif
-#ifdef DEVICE_08
-void device_08(uint8_t brightness);
-#endif
-#ifdef DEVICE_09
-void device_09(uint8_t brightness);
-#endif
-#ifdef DEVICE_10
-void device_10(uint8_t brightness);
-#endif
-#ifdef DEVICE_11
-void device_11(uint8_t brightness);
-#endif
-#ifdef DEVICE_12
-void device_12(uint8_t brightness);
-#endif
-#ifdef DEVICE_13
-void device_13(uint8_t brightness);
-#endif
-#ifdef DEVICE_14
-void device_14(uint8_t brightness);
-#endif
-#ifdef DEVICE_15
-void device_15(uint8_t brightness);
-#endif
-#ifdef DEVICE_16
-void device_16(uint8_t brightness);
-#endif
-#ifdef DEVICE_17
-void device_17(uint8_t brightness);
-#endif
-#ifdef DEVICE_18
-void device_18(uint8_t brightness);
-#endif
-#ifdef DEVICE_19
-void device_19(uint8_t brightness);
-#endif
-#ifdef DEVICE_20
-void device_20(uint8_t brightness);
-#endif
+/*
+ * 
+ *        SET UP 433 EMITOR
+ * 
+ *
+ */
+
+
+ void sendFrequency(uint8_t code){
+  
+  mySwitch.send(code, 24);
+  delay(50);
+  
+  }
 
 
 
