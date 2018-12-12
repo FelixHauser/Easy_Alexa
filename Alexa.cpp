@@ -39,16 +39,10 @@ void device_03(uint8_t brightness);
 void device_04(uint8_t brightness);
 #endif
 #ifdef DEVICE_05
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_05
-void device_01(uint8_t brightness);
+void device_05(uint8_t brightness);
 #endif
 #ifdef DEVICE_06
-void device_01(uint8_t brightness);
-#endif
-#ifdef DEVICE_06
-void device_01(uint8_t brightness);
+void device_06(uint8_t brightness);
 #endif
 #ifdef DEVICE_07
 void device_07(uint8_t brightness);
