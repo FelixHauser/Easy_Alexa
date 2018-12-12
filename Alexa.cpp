@@ -2,6 +2,10 @@
 #include <Espalexa.h>
 #include "WF_Setup.h"
 
+#ifdef RADIO_PIN
+  #include "Radio.h"
+  RadioSetup radio;
+#endif
 
 Espalexa palexa;
 
@@ -238,7 +242,16 @@ void device_01(uint8_t brightness){
 #ifdef DEVICE_02
 void device_02(uint8_t brightness){
 
-  Serial.println("Device 02 has done something");
+  /*  example of use of the radio emitter
+   
+       if (brightness) {  
+      radio.sendFrequency(4474193);  //device is ON  
+    }
+    else  {
+      radio.sendFrequency(4474196);  //device is OFF      
+    }
+    
+   */
   
   }
 #endif

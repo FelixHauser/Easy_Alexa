@@ -1,6 +1,4 @@
 #include "WF_Setup.h"
-//#include <Arduino.h>
-
 
 WFSetup::WFSetup(const char* ssid, const char* password){
 

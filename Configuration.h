@@ -14,6 +14,18 @@
 #define WIFI_PASSWORD "WiFi Password"
 
 
+
+
+// Setup Radio Emitter output pin. Useful for radio controlled plugs (433 MHz)
+// uncomment out if you want to use the radio emmiter
+// watch out for the pin output of your ESP module
+// see example of use on the callback funtion of DEVICE_02 on Alexa.cpp
+
+//#define RADIO_PIN 2 
+
+
+
+
 //Alexa devices Configuration settings
 
 #define DEVICE_01 "Llum_01"
