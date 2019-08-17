@@ -2,9 +2,14 @@
 #include <Espalexa.h>
 #include "WF_Setup.h"
 
-#ifdef RADIO_PIN
+#ifdef RADIO_RADIO
   #include "Radio.h"
   RadioSetup radio;
+#endif
+
+#ifdef USES_RELAY
+  #include "Relay.h"
+  RelaySetup relay;
 #endif
 
 Espalexa palexa;
@@ -21,70 +26,90 @@ bool isOn=false;
  * 
  * 
  *   FUNCTION DEFFINITION SECTION
- *       No need to edit these
+ *   comment out relay booleans if needed
  * 
  * 
  **************************************************/
 
 #ifdef DEVICE_01
 void device_01(uint8_t brightness);
+//bool device01Relay=false;
 #endif
 #ifdef DEVICE_02
 void device_02(uint8_t brightness);
+//bool device02Relay=false;
 #endif
 #ifdef DEVICE_03
 void device_03(uint8_t brightness);
+bool device03Relay=false;
 #endif
 #ifdef DEVICE_04
 void device_04(uint8_t brightness);
+bool device04Relay=false;
 #endif
 #ifdef DEVICE_05
 void device_05(uint8_t brightness);
+//bool device05Relay=false;
 #endif
 #ifdef DEVICE_06
 void device_06(uint8_t brightness);
+//bool device06Relay=false;
 #endif
 #ifdef DEVICE_07
 void device_07(uint8_t brightness);
+//bool device07Relay=false;
 #endif
 #ifdef DEVICE_08
 void device_08(uint8_t brightness);
+//bool device08Relay=false;
 #endif
 #ifdef DEVICE_09
 void device_09(uint8_t brightness);
+//bool device09Relay=false;
 #endif
 #ifdef DEVICE_10
 void device_10(uint8_t brightness);
+//bool device10Relay=false;
 #endif
 #ifdef DEVICE_11
 void device_11(uint8_t brightness);
+//bool device11Relay=false;
 #endif
 #ifdef DEVICE_12
 void device_12(uint8_t brightness);
+//bool device12Relay=false;
 #endif
 #ifdef DEVICE_13
 void device_13(uint8_t brightness);
+//bool device13Relay=false;
 #endif
 #ifdef DEVICE_14
 void device_14(uint8_t brightness);
+//bool device14Relay=false;
 #endif
 #ifdef DEVICE_15
 void device_15(uint8_t brightness);
+//bool device15Relay=false;
 #endif
 #ifdef DEVICE_16
 void device_16(uint8_t brightness);
+//bool device16Relay=false;
 #endif
 #ifdef DEVICE_17
 void device_17(uint8_t brightness);
+//bool device17Relay=false;
 #endif
 #ifdef DEVICE_18
 void device_18(uint8_t brightness);
+//bool device18Relay=false;
 #endif
 #ifdef DEVICE_19
 void device_19(uint8_t brightness);
+//bool device18Relay=false;
 #endif
 #ifdef DEVICE_20
 void device_20(uint8_t brightness);
+//bool device20Relay=false;
 #endif
 
 
@@ -255,8 +280,23 @@ void device_02(uint8_t brightness){
 #ifdef DEVICE_03
 void device_03(uint8_t brightness){
 
-  Serial.println("Device 03 has done something");
-  
+// example of use of a relay in push button simulator mode
+ 
+      if (brightness) {  
+
+       if (device03Relay==false){
+        relay.onOffRelay(RELAY_PIN_DEVICE_03, onDelay);
+       device03Relay=true;
+       }
+    }
+    else  {
+
+      if (device03Relay){
+      relay.onOffRelay(RELAY_PIN_DEVICE_03, offDelay);
+      device03Relay=false;
+      }
+    }
+ 
   }
 #endif
 
@@ -264,7 +304,23 @@ void device_03(uint8_t brightness){
 #ifdef DEVICE_04
 void device_04(uint8_t brightness){
 
-  Serial.println("Device 04 has done something");
+  // example of use of a relay in switch simulator mode
+   
+      if (brightness) {  
+
+       if (device04Relay==false){
+        relay.durableRelay(RELAY_PIN_DEVICE_04, true);
+       device01Relay=true;
+       }
+    }
+    else  {
+
+      if (device04Relay){
+      relay.durableRelay(RELAY_PIN_DEVICE_04, false);
+      device01Relay=false;
+      }
+    }
+ 
   
   }
 #endif

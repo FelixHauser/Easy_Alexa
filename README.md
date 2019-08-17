@@ -1,3 +1,8 @@
+# Update August 2019
+
+Added a couple of files to facilitate the use with relays to either simulate a push button or a switch.
+
+
 # Intro
 
 Easy Alexa is an Arduino Sketch created using on the [ESPalexa Library](https://github.com/Aircoookie/Espalexa) by @Aircoookie with which ESP8266 modules can be recognised as Amazon's Alexa compatible devices. With it it should be a piece of cake to setup your devices.

@@ -17,11 +17,34 @@
 
 
 // Setup Radio Emitter output pin. Useful for radio controlled plugs (433 MHz)
-// uncomment out if you want to use the radio emmiter
+// set USES_RADIO to true if you want to use the radio emmiter
 // watch out for the pin output of your ESP module
 // see example of use on the callback funtion of DEVICE_02 on Alexa.cpp
 
-//#define RADIO_PIN 2 
+#define USES_RADIO true
+
+#ifdef USES_RADIO
+#define RADIO_PIN 2
+#endif
+
+
+
+// Setup Relay output pin and delays for push button simulator.
+// set USES_RELAY to true if you want to use relays
+// watch out for the pin output of your ESP module
+// see examples of use on the callback funtion of DEVICE_03 (push button) and DEVICE_04 (switch) on Alexa.cpp
+
+#define USES_RELAY true
+
+#ifdef USES_RELAY
+#define RELAY_PIN_DEVICE_03 5
+#define RELAY_PIN_DEVICE_04 6
+
+//adjust accordingly
+#define onDelay 300
+#define offDelay 2500
+ 
+#endif
 
 
 
@@ -29,8 +52,8 @@
 //Alexa devices Configuration settings
 
 #define DEVICE_01 "Llum_01"
-//#define DEVICE_02 "Llum_02"
-//#define DEVICE_03 "Llum_03"
+#define DEVICE_02 "Llum_02"
+#define DEVICE_03 "Llum_03"
 //#define DEVICE_04 "Llum_04"
 //#define DEVICE_05 "Llum_05"
 //#define DEVICE_06 "Llum_06"
